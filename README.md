@@ -2,6 +2,7 @@
 
 ## RU: Описание проекта  
 Этот проект представляет собой расширение для сохранения и управления тестами на платформе [auto-test.online](https://auto-test.online/) . Удобное решение для хранения и восстановления тестовых данных для учеников и преподавателей автошкол. 🎓📝  
+![image](https://github.com/user-attachments/assets/3d30bc0b-7a29-45a8-b468-2eb9d70028d6)
 
 ### Структура проекта:  
 - Сохранение тестов для автошкол 🛠️  
@@ -17,6 +18,7 @@
 
 ## EN: Project Description  
 This project is an extension for saving and managing driving school tests on the [auto-test.online](https://auto-test.online/) platform. A convenient solution for storing and restoring test data for students and instructors. 🎓📝  
+![image](https://github.com/user-attachments/assets/8ac2e381-33ad-4205-ba82-7d508c989bb1)
 
 ### Project Structure:  
 - Saving tests for driving schools 🛠️  
