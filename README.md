@@ -1,7 +1,7 @@
 # Auto-Test-Online-Test-Saver-Extension 🚗💡
 
 ## RU: Описание проекта  
-Этот проект представляет собой расширение для сохранения и управления тестами на платформе auto-test.online . Удобное решение для хранения и восстановления тестовых данных для учеников и преподавателей автошкол. 🎓📝  
+Этот проект представляет собой расширение для сохранения и управления тестами на платформе [auto-test.online](https://auto-test.online/) . Удобное решение для хранения и восстановления тестовых данных для учеников и преподавателей автошкол. 🎓📝  
 
 ### Структура проекта:  
 - Сохранение тестов для автошкол 🛠️  
@@ -16,7 +16,7 @@
 ---
 
 ## EN: Project Description  
-This project is an extension for saving and managing driving school tests on the auto-test.online platform. A convenient solution for storing and restoring test data for students and instructors. 🎓📝  
+This project is an extension for saving and managing driving school tests on the [auto-test.online](https://auto-test.online/) platform. A convenient solution for storing and restoring test data for students and instructors. 🎓📝  
 
 ### Project Structure:  
 - Saving tests for driving schools 🛠️  
