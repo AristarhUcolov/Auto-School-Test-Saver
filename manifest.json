@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "AutoSchool Results Saver",
+  "author": "Aristarh Ucolov",
+  "version": "1.0",
+  "description": "Сохраняет результаты учеников вместе с билетами.",
+  "permissions": ["activeTab", "scripting", "downloads"],
+  "host_permissions": ["https://auto-test.online/*"],
+  "action": {
+    "default_popup": "interfaces/interface.html",
+    "default_icon": "images/icon.jpg"
+  }
+}
