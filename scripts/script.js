@@ -22,10 +22,9 @@ function saveExamResultsWithQuestions(studentName, examDate, group) {
   const totalGroups = groups.length;
   let allResultsHtml = '';
   let isSavingInProgress = false;
-  let processedGroups = new Set(); // Множество для отслеживания обработанных групп
-  let processedQuestions = new Set(); // Множество для отслеживания уникальных вопросов
+  let processedGroups = new Set();
+  let processedQuestions = new Set();
 
-  // Функция для обработки групп
   function collectResults(groupIndex) {
     if (groupIndex >= totalGroups || isSavingInProgress) {
       if (!isSavingInProgress) {
@@ -38,13 +37,12 @@ function saveExamResultsWithQuestions(studentName, examDate, group) {
     const group = groups[groupIndex];
     const groupIdentifier = `group-${groupIndex + 1}`;
 
-    // Проверяем, была ли уже обработана текущая группа
     if (processedGroups.has(groupIdentifier)) {
       collectResults(groupIndex + 1);
       return;
     }
 
-    group.click(); // Открываем текущую группу
+    group.click();
 
     setTimeout(() => {
       const questions = Array.from(document.querySelectorAll("#questions .btn"));
@@ -61,23 +59,26 @@ function saveExamResultsWithQuestions(studentName, examDate, group) {
 
         const questionIdentifier = `${questionTitle}-${questionText}`;
 
-        // Проверяем, был ли уже обработан этот вопрос
         if (processedQuestions.has(questionIdentifier)) {
           return;
         }
 
-        // Добавляем вопрос в множество обработанных
         processedQuestions.add(questionIdentifier);
 
-        // Извлекаем ответы
         const answerButtons = Array.from(document.querySelectorAll("#answers button"));
-        const answerDetails = answerButtons
-          .map((btn) => {
-            const answerText = btn.innerHTML.trim();
-            const isCorrect = btn.classList.contains("btn-success") ? "Правильный" : "Неправильный";
-            return `<li style="color: ${isCorrect === 'Правильный' ? 'green' : 'red'}">${answerText} - ${isCorrect}</li>`;
-          })
-          .join('');
+        let answerDetails = '';
+
+        answerButtons.forEach((btn) => {
+          const answerText = btn.innerHTML.trim();
+          const isCorrect = btn.classList.contains("btn-success");
+          const isSelected = btn.classList.contains("btn-selected");
+
+          let color = "black";
+          if (isCorrect) color = "green";
+          if (isSelected && !isCorrect) color = "red";
+
+          answerDetails += `<li style="color: ${color}">${answerText}</li>`;
+        });
 
         questionDetailsHtml += `
           <div>
@@ -90,25 +91,21 @@ function saveExamResultsWithQuestions(studentName, examDate, group) {
           </div>`;
       });
 
-      // Добавляем результат текущей группы
       if (questionDetailsHtml) {
         allResultsHtml += `
           <div>
             <h2>Группа ${groupIndex + 1}</h2>
             ${questionDetailsHtml}
           </div>`;
-        processedGroups.add(groupIdentifier); // Помечаем группу как обработанную
+        processedGroups.add(groupIdentifier);
       }
 
-      // Переходим к следующей группе
       collectResults(groupIndex + 1);
     }, 500);
   }
 
-  // Начинаем обработку с первой группы
   collectResults(0);
 
-  // Функция для сохранения результатов
   function saveToFile(htmlContent) {
     const resultHtml = `
       <html>
