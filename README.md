@@ -14,6 +14,7 @@
 - Для вопросов и предложений используйте Issues. 📝  
 - 🔧 Проект находится в процессе разработки. Обновления будут выходить регулярно! 🚀
 
+#### Автор: Аристарх Уколов ( Aristarh Ucolov )
 ---
 
 ## EN: Project Description  
@@ -29,3 +30,5 @@ This project is an extension for saving and managing driving school tests on the
 - All updates will be added as the project develops. 📈  
 - For questions and suggestions, use Issues. 📝  
 - 🔧 The project is under development. Updates will be released regularly! 🚀
+
+#### Author: Aristarh Ucolov ( Аристарх Уколов )
